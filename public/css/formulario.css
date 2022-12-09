@@ -1,0 +1,64 @@
+/* LOGIN */
+.formulario {
+    margin: 0 auto;
+}
+.form label {
+    color: var(--primary);
+    font-size: 20px;
+}
+.form input {
+    width: 100%;
+    padding: 15px 0;
+    color: #7C6F49;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.boton button{
+    background-color: var(--primary);
+    color: var(--text);
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    height: 40px;
+    width: 100%
+}
+.boton button:hover {
+    color: var(--primary);
+    background-color: var(--text);
+}
+.crearcuenta {
+    font-size: 15px;
+    color: var(--primary);
+    text-align: right;
+}
+.crearcuenta:hover {
+    color: var(--text);
+}
+.caja1 {
+
+    text-align: right;
+    gap: 180px;
+}
+
+.boton2 button{
+    width: 100%;
+    font-size: 20px;
+    background-color: var(--primary);
+    color: var(--text);
+    font-family: var(--releway);
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    height: 40px;
+}
+.boton2 button:hover {
+    color: var(--primary);
+    background-color: var(--text);
+}

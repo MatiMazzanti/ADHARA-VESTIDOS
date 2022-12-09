@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Raleway:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+/* 
+font-family: 'Antonio', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+/* 
+font-family: 'Satisfy', cursive;
+*/
+
+/* NORMALIZE */
+:root {
+    --primary: #7C6F49;
+    --text: #EEEEEE;
+    --gris: #353535;
+    --negro: #000000;
+
+    --antonio: 'Antonio', sans-serif;
+    --releway: 'Raleway', sans-serif;
+    --roboto: 'Roboto', sans-serif;
+    --satisfy: 'Satisfy', cursive;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height:100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    color: var(--text);
+    font-family: var(--antonio);
+    background-color: var(--negro)
+}
+h1 {
+    font-size: 3.6em;
+}
+h2 {
+    font-size: 2.6em;
+}
+p {
+    font-size: 1.6em;
+}
+a {
+    font-size: 2.2em;
+    color: var(--text);
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+span { 
+    font-size: 1.6em;
+}
+
+/* UTILITARIES */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.linea{
+    border-top: 1px solid var(--primary);
+    height: 1px;
+    padding: 0;
+    margin-top: 10px;
+}

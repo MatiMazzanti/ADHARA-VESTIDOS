@@ -1,0 +1,23 @@
+/* HEADER */
+header {
+    background-color: rgb(20, 20, 20);
+    height: 140px;
+}
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+}
+header .navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+header .navbar__link {
+    color: var(--primary);
+}
+header .navbar__link:hover{
+    color: var(--text);
+}
+header picture .header__img {
+    width: 200px;
+}

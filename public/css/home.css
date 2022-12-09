@@ -1,0 +1,47 @@
+/* NOVEDADDES */
+.center{
+    text-align: center;
+    color: var(--primary);
+    font-family: var(--releway);
+    margin-top: 10px;
+    line-height: 30px;
+}
+
+.novedades {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.novedades .caja .picture img{
+    width: 80%;
+    transition: 2s;
+}
+.novedades .caja .picture img:hover{
+    transform: scale(1.1);
+}
+.center a {
+    color: #7C6F49;
+    font-family: var(--satisfy);
+    font-size: 30px;
+}
+.center a:hover {
+    color: var(--text);
+}
+.vermas {
+    border: 1px solid var(--primary);
+    width: 25%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    letter-spacing: 8px;
+    height: 40px;
+    background-color: transparent;
+}
+
+/* MAPA */
+.mapa{
+    margin-top: 10px;
+    text-align: center;
+}

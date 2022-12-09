@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <main class="container">
+        <h1 id="galeria">Acceso</h1>
+        <form class="formulario" name="formulario" method="POST" action="/reserva">
+            <div class="form">
+                <label for="user">Usuario</label>
+                <input type="text" id="usuario" name="user" required>
+            </div>
+            <div class="form">
+                <label for="pass">Contraseña</label>
+                <input type="password" id="pass" name="pass" required>
+            </div>
+            <div class="caja1">
+                <div class="boton">
+                    <button type="submit">Ingresar</button>
+                </div>
+                <div>
+                    <a class="crearcuenta" href="/crearcuenta">Crear Cuenta</a>
+                </div>
+                <div>
+                    <a class="crearcuenta" href="/olvidepass">Olvidaste tu contraseña?<br></a>
+                </div>
+            </div>
+        </form>
+    </main>
+    <div class="linea"></div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

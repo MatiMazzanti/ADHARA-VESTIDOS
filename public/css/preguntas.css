@@ -1,0 +1,20 @@
+/* PREGUNTAS */
+.preguntasyrespuestas {
+    color: var(--primary);
+    font-family: var(--releway);
+    margin: 20px auto;
+    text-align: center;
+}
+.preguntas {
+    font-size: 40px;
+}
+.respuestas {
+    font-size: 20px;
+    color: var(--text);
+}
+#galeria{
+    text-align: center;
+    color: var(--primary);
+    font-family: var(--releway);
+    margin-top: 20px;
+}
