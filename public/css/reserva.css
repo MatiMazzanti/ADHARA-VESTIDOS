@@ -1,0 +1,138 @@
+#galeria {
+    text-align: center;
+    color: var(--primary);
+    font-family: var(--releway);
+    margin-top: 20px;
+}
+
+#prev {
+    background-color: transparent;
+    border: none;
+    color: var(--text);
+}
+.fondo {
+    background: rgba(0, 0, 0, 0.7) url(/img/fondo.jfif);
+    background-blend-mode:screen ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 400px;
+    width: 100%;
+    background-blend-mode: darken;
+}
+
+.root {
+    margin-top: 20px;
+    min-height: 50vh;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.calendar { 
+    font-family: var(--releway);
+    padding: 20px 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--primary);
+}
+.calendar p {
+    color: white;
+    font-size:2rem;
+    text-align: center;
+    margin-bottom: 5px;
+    cursor: default;
+}
+
+.calendar_header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: default;
+}
+
+.calendar .control { 
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+    font-size: 1.5rem;
+}
+.grid_header, .grid_body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    cursor: default;
+}
+.grid_header {
+    margin-bottom: 15px;
+    gap: 5px;
+}
+
+.grid_body { 
+    grid-auto-rows: 33.9px;
+}
+.grid_cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid_cell--gd { 
+    cursor: pointer;
+}
+
+.grid_cell--selected { 
+    color: var(--primary);
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--primary) inset;
+}
+
+.grid_cell--disabled {
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.422);
+}
+
+.boton {
+    margin: 0 auto;
+    height: 50px;
+    justify-content: center;
+    width: 50%;
+    font-size: 2rem;
+    color: white;
+    background-color: var(--primary);
+    font-family: var(--releway);
+    letter-spacing: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 100px;
+}
+.boton:hover {
+    background-color: white;
+    color: var(--primary);
+}
+
+.grid_body-hs {
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    cursor: default;
+    min-height: 250px;
+    min-width: 200px;
+    letter-spacing: 2px
+}
+.grid_cell--gd-hs { 
+    cursor: pointer;
+}
+.none{
+    display: none;
+}
+.reservado {
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.422);
+}
+

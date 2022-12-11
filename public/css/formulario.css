@@ -6,6 +6,17 @@
     color: var(--primary);
     font-size: 20px;
 }
+.fondo {
+    background: rgba(0, 0, 0, 0.7) url(/img/fondo.jfif);
+    background-blend-mode:screen ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 400px;
+    width: 100%;
+    text-align: right;
+    background-blend-mode: darken;
+}
 .form input {
     width: 100%;
     padding: 15px 0;
@@ -25,9 +36,28 @@
     padding: 10px;
     font-size: 20px;
     height: 40px;
-    width: 100%
+    width: 100%;
+    cursor: pointer;
+    letter-spacing: 10px;
+}
+.boton input{
+    background-color: var(--primary);
+    color: var(--text);
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    letter-spacing: 10px;
 }
 .boton button:hover {
+    color: var(--primary);
+    background-color: var(--text);
+}
+.boton input:hover {
     color: var(--primary);
     background-color: var(--text);
 }

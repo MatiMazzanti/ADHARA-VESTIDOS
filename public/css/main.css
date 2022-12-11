@@ -13,6 +13,17 @@ main .principal{
     line-height: 8em;
     background-blend-mode: darken;
 }
+.fondo {
+    background: rgba(0, 0, 0, 0.7) url(/img/fondo.jfif);
+    background-blend-mode:screen ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 400px;
+    width: 100%;
+    text-align: right;
+    background-blend-mode: darken;
+}
 main .principal h1{
     color: var(--primary);
     font-family: var(--releway);

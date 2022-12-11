@@ -3,23 +3,52 @@
     <%- include('../partials/head') %>
 <body>
     <%- include('../partials/header') %>
-    <main class="container">
-        <h1 id="galeria">Reserva tu cita</h1>
-        <form action="">
-            <div class="form">
-                <label for="">Selecciona un dia</label>
-                <input type="date" required min="">
-            </div>
-            <div class="form">
-                <label for="">Selecciona un horario</label>
-                <input type="time">
-            </div>
-            <div class="boton2  ">
-                <button type="submit">Reservar</button>
-            </div>
-        </form>
+    <main class="container fondo">
+        <h1 id="galeria">Reservá tu cita</h1>
+        <h2 id="galeria">Hola, <%= user %>, segui los pasos para reservar tu cita </h2>
+        <article class="root">
+            <section class="calendar" id="calendar">
+            </section>
+            <section class="calendar none" id="none">
+                <p>Paso 2: Elegí la hora</p>
+                <div class="grid_body-hs" id="grid_body">
+                    <span id="span1" class="grid_cell grid_cell--gd-hs" onclick="hsSelected('1')">10:00</span>
+                    <span id="span2"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('2')">10:30</span>
+                    <span id="span3"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('3')">11:00</span>
+                    <span id="span4"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('4')">11:30</span>
+                    <span id="span5"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('5')">12:00</span>
+                    <span id="span6"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('6')">12:30</span>
+                    <span id="span7"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('7')">13:00</span>
+                    <span id="span8"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('8')">13:30</span>
+                    <span id="span9"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('9')">14:00</span>
+                    <span id="span10"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('10')">14:30</span>
+                    <span id="span11"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('11')">15:00</span>
+                    <span id="span12"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('12')">15:30</span>
+                    <span id="span13"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('13')">16:00</span>
+                    <span id="span14"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('14')">16:30</span>
+                    <span id="span15"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('15')">17:00</span>
+                    <span id="span16"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('16')">17:30</span>
+                    <span id="span17"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('17')">18:00</span>
+                    <span id="span18"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('18')">18:30</span>
+                    <span id="span19"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('19')">19:00</span>
+                    <span id="span20"class="grid_cell grid_cell--gd-hs" onclick="hsSelected('20')">19:30</span>
+                </div>
+            </section>
+        </article>
     </main>
+    <button type="submit" class="boton">Reservar turno</button>
     <div class="linea"></div>
     <%- include('../partials/footer') %>
+    <script src="js/horarios.js"></script>
+    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
+    <script src="js/calendario.js"></script>
+    <script type="text/javascript">
+        let calendar = new Calendar('calendar');
+        calendar.getElement().addEventListener('change', e => {
+            document.getElementById('none').classList.remove('none');
+            console.log(calendar.value().format('LLL'));
+        });
+    </script>
 </body>
 </html>
