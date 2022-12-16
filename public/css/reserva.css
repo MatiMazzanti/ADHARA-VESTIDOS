@@ -85,6 +85,15 @@
     cursor: pointer;
 }
 
+.grid_cell--gd { 
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin: 0 auto;
+    padding: 0;
+    width: 33px;
+}
 .grid_cell--selected { 
     color: var(--primary);
     background-color: white;
@@ -135,4 +144,25 @@
     cursor: not-allowed;
     color: rgba(255, 255, 255, 0.422);
 }
-
+.grid_cell--gd-hs {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+.grid_cell--selected-hs { 
+    color: var(--primary);
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--primary) inset;
+}
+.ocultos { 
+    display: flex;
+    width: 100px;
+    margin: 0 auto;
+}
+.oculto {
+    display: none;
+    position: absolute;
+}

@@ -29,5 +29,20 @@
     </main>
     <div class="linea"></div>
     <%- include('../partials/footer') %>
+    <!-- SweetAlert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                icon: '<%= icon %>',
+                title: '<%= title %>',
+                text: '<%= mensage %>',
+                showConfirmButton: false,
+                timer: '<%= time %>'
+            }).then(() => {
+                window.location = '/login <%= ruta %>'
+            })
+        </script>
+    <% } %>   
 </body>
 </html>

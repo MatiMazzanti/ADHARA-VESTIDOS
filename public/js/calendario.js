@@ -92,9 +92,7 @@ class Calendar {
             }
             //<span class="grid_cell grid_cell--gd" grid_cell--selected></span>
             templateCells += `
-            <span class="grid_cell grid_cell--gd ${disabledClass}" data-cell-id="${i}">
-                ${this.cells[i].date.date()}
-            </span>`;
+            <input type="button" value="${this.cells[i].date.date()}" class="grid_cell grid_cell--gd ${disabledClass}" data-cell-id="${i}"></input>`;
         }
         this.elMonthName.innerHTML = this.currentMonth.format('MMM YYYY');
         this.elGridBody.innerHTML = templateCells;
