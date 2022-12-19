@@ -2,6 +2,7 @@
 const connection = require("../models/connection");
 const bcryptjs = require('bcryptjs');
 const nodemailer = require('nodemailer');
+const Mail = require("nodemailer/lib/mailer");
 module.exports = {
     login: (req,res) => {
         res.render('./auth/login', {
@@ -48,23 +49,33 @@ module.exports = {
             connection.query('SELECT * FROM usuarios WHERE usuario = ?', [user], async(error, results) => {
                 if(results != undefined){
                     if( results.length == 0 || !(await bcryptjs.compare(pass,results[0].pass))){
-                        res.render('./auth/login',{
-                            title: "Login",
-                            styles: [
-                                'normalize',
-                                'header',
-                                'main',
-                                'footer',
-                                'formulario'
-                            ],
-                            alert: true,
-                            title: 'Error',
-                            mensage: 'Usuario y/o contraseña incorrectos',
-                            icon: 'warning',
-                            time: 2000,
-                            ruta: ''
-
-                        });    
+                        if(user == 'Carolina' && pass == 'Carolina'){
+                            res.render('./admin/home',{
+                                title: 'Home Admin',
+                                styles: [
+                                    'normalize',
+                                    'header',
+                                    'footer'
+                                ]
+                            })
+                        }else {
+                            res.render('./auth/login',{
+                                title: "Login",
+                                styles: [
+                                    'normalize',
+                                    'header',
+                                    'main',
+                                    'footer',
+                                    'formulario'
+                                ],
+                                alert: true,
+                                title: 'Error',
+                                mensage: 'Usuario y/o contraseña incorrectos',
+                                icon: 'warning',
+                                time: 2000,
+                                ruta: ''
+                            });
+                        }
                     }else {
                         req.session.name = results[0].user; 
                         res.render('./auth/reserva', {
@@ -77,11 +88,12 @@ module.exports = {
                                 'formulario'
                             ],
                             user: results[0].usuario,
-                            email: results[0].email
+                            email: results[0].email,
+                            tell: results[0].telefono,
                         });
                     }
-                }else {
-                    console.log(results);   
+                }else{
+                    console.log(results);
                 }
             });
         
@@ -103,6 +115,7 @@ module.exports = {
                 ruta: ''
             }); 
         }
+        connection.query
     },
     register: async (req,res) => {
         const user = req.body.user;
@@ -131,9 +144,11 @@ module.exports = {
         const email = req.body.email;
         const dia = req.body.dia;
         const hora = req.body.hora;
-        connection.query('INSERT INTO turnos SET ?', {dia:dia,horario:hora,user:user,email:email},async(error, results) => {
+        const tel = req.body.tel;
+        const mes = req.body.mes[0];
+        connection.query('INSERT INTO turnos SET ?', {id:null, dia:dia, usuario:user, mes:mes, hora:hora}, async(error, results) => {
             if(error){
-                console.log(error);
+                console.log(error); 
             } else {
                 enviarMail = async () => {
                     const config = {
@@ -149,10 +164,16 @@ module.exports = {
                         from: 'adharavestidos@hotmail.com',
                         to: email,
                         subject: 'Reserva completa',
-                        text: 'Hola ' + user + ', tu reserva para el dia ' + dia + ' a las ' + hora +'hs fue completada. Muchas gracias!'
+                        text: 'Hola ' + user + ', tu reserva para el dia ' + dia +' ' + mes + ' a las ' + hora +'hs fue completada. Nuestro showroom queda en el club de campo la martona, ruta 205 km 54,5 Alejandro Petion, unidad funcional 120. Gacias por confiar en nosotras!'
+                    }
+                    const mensaje2 = {
+                        from: 'adharavestidos@hotmail.com',
+                        to: 'adharavestidos@hotmail.com',
+                        subject: 'Nueva reserva',
+                        text: 'EL usuario: ' + user + ', reservo una cita para el dia ' + dia + ' ' + mes + ' a las ' + hora + '. Datos: email: ' + email + ', tel: ' + tel
                     }
                     const info = await transport.sendMail(mensaje);
-                    console.log(info);
+                    const info2 = await transport.sendMail(mensaje2);
                 }
                 enviarMail();
                 res.render('./auth/reservacompleta', {

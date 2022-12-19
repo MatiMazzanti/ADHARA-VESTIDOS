@@ -8,6 +8,7 @@
         <h2 id="galeria">Hola <%= user %>, segui los pasos para reservar tu cita.</h2>
         <p id="usuario"> <%= user %> </p>
         <p id="email"> <%= email %> </p>
+        <p id="tell"> <%= tell %> </p>
         <form method="post" action="/reservacompleta">
             <article class="root">
                 <section class="calendar" id="calendar">
@@ -44,6 +45,8 @@
             <input type="email" id="mail" name="email" class="oculto">
             <input type="text" name="dia" id="dia" class="oculto">
             <input type="text" name="hora" id="hora" class="oculto">
+            <input type="tel" name="tel" id="tel" class="oculto">
+            <input type="text" name="mes" id="messs" class="oculto">
         </div>
         <input type="submit"  value="Confirmar reserva" class="boton"></input>
     </form>

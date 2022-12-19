@@ -39,6 +39,16 @@
     max-width: 300px;
     background-color: var(--primary);
 }
+#mes {
+    margin: 0 auto;
+    color: white;
+    background-color: transparent;
+    border: none;
+    text-transform:uppercase;
+    text-align: center;
+    font-size: 2rem;
+
+}
 .calendar p {
     color: white;
     font-size:2rem;
@@ -160,9 +170,9 @@
 .ocultos { 
     display: flex;
     width: 100px;
-    margin: 0 auto;
 }
 .oculto {
     display: none;
     position: absolute;
-}
+} 
+

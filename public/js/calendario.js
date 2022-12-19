@@ -19,7 +19,7 @@ class Calendar {
         <p>Paso 1: Seleccioná el día</p>
         <div class="calendar_header">
             <button type="button" class="control control--prev" id="prev"> < </button>
-                <span class="month-name">Oct 2022</span>
+                <input value="Oct 2022" id="mes" name="mes" class="month-name"></input>
             <button type="button" class="control control--next" id="prev"> > </button>
         </div>
         <div class="calendar_body">
@@ -94,7 +94,7 @@ class Calendar {
             templateCells += `
             <input type="button" value="${this.cells[i].date.date()}" class="grid_cell grid_cell--gd ${disabledClass}" data-cell-id="${i}"></input>`;
         }
-        this.elMonthName.innerHTML = this.currentMonth.format('MMM YYYY');
+        this.elMonthName.setAttribute("value",this.currentMonth.format('MMM YYYY'));
         this.elGridBody.innerHTML = templateCells;
         this.addEventListenerToCells(); 
     }
